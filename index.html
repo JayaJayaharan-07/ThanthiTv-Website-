@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+  <meta charset="UTF-8">
+  <!-- BUG 1 FIX: was "width-device-width" (typo) -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Thanthi TV</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<!-- ══════════════════════════
+  FIXED HEADER WRAPPER
+══════════════════════════ -->
+<div class="header-wrapper">
+
+  <!-- Top Info Bar -->
+  <div class="top-bar">
+    <div class="top-left">
+      <span><i class="fa-solid fa-home"></i> Home</span>
+      <span><i class="fa-solid fa-address-card"></i> About us</span>
+      <span><i class="fa-solid fa-phone"></i> Contact us</span>
+    </div>
+    <!-- BUG 2 FIX: removed duplicate top-left, made nav links -->
+    <div class="top-center">
+      <span>தமிழ்நாடு <i class="fa-solid fa-angle-down"></i></span>
+      <span>இந்தியா <i class="fa-solid fa-angle-down"></i></span>
+      <span>உலகம் <i class="fa-solid fa-angle-down"></i></span>
+      <span>விளையாட்டு <i class="fa-solid fa-angle-down"></i></span>
+    </div>
+    <div class="top-right">
+      <span class="date-span"><i class="fa-regular fa-calendar"></i> January 8, 2025</span>
+      <div class="social-icons">
+        <i class="fab fa-facebook-f"></i>
+        <i class="fab fa-twitter"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-whatsapp"></i>
+        <i class="fab fa-youtube"></i>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Navbar -->
+  <nav class="navbar">
+    <!-- BUG 3 FIX: local image path replaced with real logo URL -->
+    <div class="logo">
+      <img src="images/thanthitv logo.jpeg" alt="Thanthi TV Logo"
+           onerror="this.src='https://via.placeholder.com/70x70/2d388a/white?text=TTV'">
+    </div>
+
+    <!-- Desktop Menu -->
+    <ul class="nav-menu" id="nav-menu">
+      <li>செய்தித் தொகுப்பு <i class="fa-solid fa-angle-down"></i></li>
+      <li>மழை Updates</li>
+      <li>ஸ்பெஷல்ஸ்</li>
+      <li>நிகழ்ச்சிகள்</li>
+      <li>மக்கள் குரல்</li>
+      <li>ராசிபலன்</li>
+      <li>பிரபலமானவை</li>
+    </ul>
+
+    <div class="nav-right">
+      <div class="call">
+        <i class="fa-solid fa-search"></i>
+        <small>Search Here</small>
+      </div>
+      <button class="booking-btn">Watch Live</button>
+      <!-- Hamburger -->
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile dropdown menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <ul>
+      <li>செய்தித் தொகுப்பு</li>
+      <li>மழை Updates</li>
+      <li>ஸ்பெஷல்ஸ்</li>
+      <li>நிகழ்ச்சிகள்</li>
+      <li>மக்கள் குரல்</li>
+      <li>ராசிபலன்</li>
+      <li>பிரபலமானவை</li>
+    </ul>
+  </div>
+
+</div><!-- end header-wrapper -->
+
+<!-- ══════════════════════════
+  BREAKING NEWS TITLE
+  BUG 4 FIX: removed margin-left:400px and invalid "text: size 400px"
+══════════════════════════ -->
+<div class="head-title">
+  <h1>BREAKING NEWS</h1>
+</div>
+
+<!-- ══════════════════════════
+  VIDEO GALLERY
+══════════════════════════ -->
+<div class="gallery-wrapper">
+  <div class="gallery-container">
+
+    <!-- LEFT BIG VIDEO -->
+    <div class="main-video">
+      <!-- BUG 5 FIX: using YouTube embed instead of local C:\ path -->
+      <div class="video-preview" id="videoPreview">
+        <img id="mainThumb" src="https://media.thanthitv.com/h-upload/videothumb/yt_IWfyE7jLtKo.jpg" alt="video thumbnail">
+        <div class="play-overlay"><i class="fa-solid fa-circle-play"></i></div>
+      </div>
+      <div class="youtube-embed" id="youtubeEmbed" style="display:none;">
+        <iframe id="ytFrame" width="100%" height="100%" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </div>
+      <h3 id="mainTitle">TVK Vijay | Nainar | பாஜக கூட்டணியில் தவெக? | நயினார் சொன்ன எதிர்பாரா பதில்</h3>
+    </div>
+
+    <!-- RIGHT VIDEO LIST -->
+    <div class="video-list">
+
+      <!-- BUG 6 FIX: removed duplicate .active from item 8 -->
+      <div class="video-item active"
+           data-video="IWfyE7jLtKo"
+           data-title="TVK Vijay | Nainar | பாஜக கூட்டணியில் தவெக? | நயினார் சொன்ன எதிர்பாரா பதில்">
+        <img src="https://media.thanthitv.com/h-upload/videothumb/yt_IWfyE7jLtKo.jpg" alt="">
+        <span>TVK Vijay | Nainar | பாஜக கூட்டணியில் தவெக?</span>
+      </div>
+
+      <div class="video-item"
+           data-video="iRs6Z8HhJJ0"
+           data-title="சோகத்தில் முடிந்த புத்தாண்டு கொண்டாட்டம் - பாரில் பயங்கர தீ விபத்து!">
+        <img src="https://media.thanthitv.com/h-upload/videothumb/yt_iRs6Z8HhJJ0.jpg" alt="">
+        <span>சோகத்தில் முடிந்த புத்தாண்டு கொண்டாட்டம்</span>
+      </div>
+
+      <div class="video-item"
+           data-video="PEPeWvm_tn4"
+           data-title="SSLV | ISRO | SSLV 3ஆம் கட்டம் - இஸ்ரோவின் சோதனை வெற்றி..">
+        <img src="https://media.thanthitv.com/h-upload/videothumb/yt_PEPeWvm_tn4.jpg" alt="">
+        <span>SSLV | ISRO | 3ஆம் கட்டம் - வெற்றி..</span>
+      </div>
+
+      <div class="video-item"
+           data-video="6VdU5c2u5wI"
+           data-title="Anti Terrorism | NIA சபதம் எடுத்து அதிரடியில் இறங்கிய NIA">
+        <img src="https://media.thanthitv.com/h-upload/videothumb/yt_6VdU5c2u5wI.jpg" alt="">
+        <span>Anti Terrorism | NIA அதிரடி</span>
+      </div>
+
+      <div class="video-item"
+           data-video="Yrp2LQcSQ9Y"
+           data-title="Kasthuri | Rajinikanth | கொதித்து பேசிய நடிகை கஸ்தூரி">
+        <img src="https://media.thanthitv.com/h-upload/videothumb/yt_Yrp2LQcSQ9Y.jpg" alt="">
+        <span>கொதித்து பேசிய நடிகை கஸ்தூரி</span>
+      </div>
+
+      <div class="video-item"
+           data-video="wZpF1qkuumA"
+           data-title="Kanyakumari || இன்ஸ்டாகிராம் - +1 மாணவி கர்ப்பம்">
+        <img src="https://media.thanthitv.com/h-upload/videothumb/yt_wZpF1qkuumA.jpg" alt="">
+        <span>Kanyakumari | +1 மாணவி கர்ப்பம்</span>
+      </div>
+
+      <div class="video-item"
+           data-video="VnTC--GtyU0"
+           data-title="ADMK | EPS பெயரில் 2000 பேர் விருப்ப மனு">
+        <img src="https://media.thanthitv.com/h-upload/videothumb/yt_VnTC--GtyU0.jpg" alt="">
+        <span>ADMK | EPS பெயரில் 2000 பேர் விருப்ப மனு</span>
+      </div>
+
+      <div class="video-item"
+           data-video="MtI5S9xOKNg"
+           data-title="MGR | CPR | Nainar Nagendran | நயினார் சொன்ன விஷயம்">
+        <img src="https://media.thanthitv.com/h-upload/videothumb/yt_MtI5S9xOKNg.jpg" alt="">
+        <span>MGR | நயினார் சொன்ன விஷயம்</span>
+      </div>
+
+      <div class="video-item"
+           data-video="HbaChAQX5A8"
+           data-title="உலகையேபுரட்டிப்போட்ட நிகழ்வுகள் 2000-2025">
+        <img src="https://media.thanthitv.com/h-upload/videothumb/yt_HbaChAQX5A8.jpg" alt="">
+        <span>உலகையேபுரட்டிப்போட்ட நிகழ்வுகள் 2000-2025</span>
+      </div>
+
+      <div class="video-item"
+           data-video="7x9ykNsKt6s"
+           data-title="Ilaiyaraaja | Temple | அண்ணாமலையார் கோயிலில் இளையராஜா">
+        <img src="https://media.thanthitv.com/h-upload/videothumb/yt_7x9ykNsKt6s.jpg" alt="">
+        <span>இளையராஜா | அண்ணாமலையார் கோயில்</span>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<hr class="section-hr">
+
+<!-- ══════════════════════════
+  MOST READ — அதிகம் வாசிக்கப்பட்டவை
+  BUG 7 FIX: removed fixed margin-left:80px, width:500px, advertisement at margin-left:1150px
+══════════════════════════ -->
+<section class="news-section">
+  <h3 class="section-title">அதிகம் வாசிக்கப்பட்டவை</h3>
+
+  <div class="news-layout">
+
+    <div class="feature-news">
+      <img src="https://media.thanthitv.com/h-upload/2025/12/26/500x300_728333-sourah.jpg" alt="">
+      <h2>கணவருடன் நடனம் ஆடிய செளந்தர்யா ரஜினிகாந்த்</h2>
+      <span class="date">JANUARY 2, 2026</span>
+      <p>தமிழ்நாட்டில் மதியம் 1 மணி வரை 4 மாவட்டங்களில் மழை பெய்ய வாய்ப்புள்ளதாக வானிலை ஆய்வு மையம் தெரிவித்துள்ளது.</p>
+      <hr class="inner-hr">
+      <h2 class="sub-heading">முக்கியச் செய்திகள்</h2>
+      <p>TVK Vijay | Nainar | பாஜக கூட்டணியில் தவெக? | நயினார் சொன்ன எதிர்பாரா பதில்</p>
+      <hr class="inner-hr">
+      <p>AK | Ajith Kumar | New Year | அஜித் வெளியிட்ட மாஸ்வீடியோ</p>
+      <hr class="inner-hr">
+      <p>New Year | Madurai | மதுரை மீனாட்சிக்காக காத்திருந்த மக்கள்</p>
+      <hr class="inner-hr">
+      <p>ஜனவரி 16ம் தேதி காதலனை கரம் பிடிக்கும் பிக்பாஸ் புகழ் ஜூலி</p>
+      <hr class="inner-hr">
+      <p>New Year 2026 | பிறந்தது 2026 - விடியற்காலமே விநாயகரை பார்க்க குவிந்த பக்தர்கள்</p>
+      <hr class="inner-hr">
+    </div>
+
+    <div class="right-news">
+      <div class="news-column">
+        <div class="news-item">
+          <img src="https://media.thanthitv.com/h-upload/videothumb/yt_aSyGLk0Yz5c.jpg" onerror="this.src='https://media.thanthitv.com/h-upload/videothumb/yt_Va7nlvo3hVQ.jpg'" alt="">
+          <h4>Pongal | பொங்கல் பரிசு தொகுப்பு வெளியான முக்கிய அறிவிப்பு</h4>
+          <span>JANUARY 2, 2026</span>
+        </div>
+        <div class="news-item">
+          <img src="https://media.thanthitv.com/h-upload/videothumb/yt_8b3E83Ddq1E.jpg" onerror="this.src='https://media.thanthitv.com/h-upload/videothumb/yt_Fh_KLGc0SvE.jpg'" alt="">
+          <h4>Demonte Colony 3 | "பயம்.." மிரட்ட வரும் டிமான்ட்டி காலனி 3</h4>
+          <span>DECEMBER 31, 2025</span>
+        </div>
+        <div class="news-item">
+          <img src="https://media.thanthitv.com/h-upload/videothumb/yt_Va7nlvo3hVQ.jpg" alt="">
+          <h4>Virudhunagar | சட்டவிரோத பட்டாசு திரி தயாரிப்பு 2 தொழிலாளர்கள் பலி</h4>
+          <span>DECEMBER 29, 2025</span>
+        </div>
+        <div class="news-item">
+          <img src="https://media.thanthitv.com/h-upload/videothumb/yt_KYLe0hXiVzU.jpg" alt="">
+          <h4>ஆம்ஸ்ட்ராங் கொலை வழக்கு | சிறையில் அடுத்த அதிர்ச்சி</h4>
+          <span>DECEMBER 30, 2025</span>
+        </div>
+      </div>
+
+      <div class="news-column">
+        <div class="news-item">
+          <img src="https://media.thanthitv.com/h-upload/videothumb/yt_Fh_KLGc0SvE.jpg" alt="">
+          <h4>BREAKING | தி.குன்றம் மலையில் இருக்கும் போலீஸ் - நீதிபதி முக்கிய கருத்து</h4>
+          <span>DECEMBER 31, 2025</span>
+        </div>
+        <div class="news-item">
+          <img src="https://media.thanthitv.com/h-upload/videothumb/yt_qkfeDvMVL94.jpg" alt="">
+          <h4>"மெரினா கடற்கரை கடையை அகற்றுங்கள்" - சென்னை உயர்நீதிமன்றம்</h4>
+          <span>DECEMBER 31, 2025</span>
+        </div>
+        <div class="news-item">
+          <img src="https://media.thanthitv.com/h-upload/videothumb/yt_xK8qaKf5wak.jpg" alt="">
+          <h4>காங்கிரஸுக்கு அதிர்ச்சி கொடுத்த எம்பி ஜோதிமணி</h4>
+          <span>DECEMBER 28, 2025</span>
+        </div>
+        <div class="news-item">
+          <img src="https://media.thanthitv.com/h-upload/videothumb/yt_xK8qaKf5wak.jpg" alt="">
+          <h4>புதிய பரபரப்பான அரசியல் செய்தி</h4>
+          <span>DECEMBER 28, 2025</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<hr class="section-hr">
+
+<!-- ══════════════════════════
+  POLITICS — அரசியல்
+  BUG 8 FIX: removed margin-top:1100px, margin-left:-300px, width:400px
+══════════════════════════ -->
+<section class="news-section2">
+  <h1 class="section-title2">அரசியல்</h1>
+  <div class="news-layout2">
+    <div class="feature-news2">
+      <img src="https://media.thanthitv.com/h-upload/videothumb/yt_MtI5S9xOKNg.jpg" alt="">
+      <h2>"எம்.ஜி.ஆர்-ன் ஆசி இருக்கு.." மேடையில் நயினார் சொன்ன விஷயம்</h2>
+      <span class="date2">JANUARY 2, 2026</span>
+      <p>தமிழ்நாட்டில் மதியம் 1 மணி வரை 4 மாவட்டங்களில் மழை பெய்ய வாய்ப்புள்ளதாக வானிலை ஆய்வு மையம் தெரிவித்துள்ளது.</p>
+    </div>
+    <div class="right-news2">
+      <div class="news-column2">
+        <div class="news-item2"><img src="https://media.thanthitv.com/h-upload/videothumb/yt_EljNuldJgAg.jpg" alt=""><div class="news-text2"><h4>"தொடர்ந்தால் தான் விடிவுகாலம்" வைகோ</h4><span>JANUARY 2, 2026</span></div></div>
+        <div class="news-item2"><img src="https://media.thanthitv.com/h-upload/videothumb/yt_rTMa_CDZ0mw.jpg" alt=""><div class="news-text2"><h4>"முதல்வர் நேரடியாக விவாதிக்க தயாரா?" எல்.முருகன்</h4><span>DECEMBER 31, 2025</span></div></div>
+        <div class="news-item2"><img src="https://media.thanthitv.com/h-upload/videothumb/yt_v7pLjEeqYYA.jpg" alt=""><div class="news-text2"><h4>"இதுதான் ஹிஸ்டரி.. சிக்கந்தருக்கு மதுரையில 2 தர்கா"</h4><span>DECEMBER 31, 2025</span></div></div>
+        <div class="news-item2"><img src="https://media.thanthitv.com/h-upload/2026/01/02/500x300_728603-marakumanenjam.jpg" alt=""><div class="news-text2"><h4>2025 ஆண்டு இறுதி - அரசியல், சினிமா</h4><span>DECEMBER 29, 2025</span></div></div>
+      </div>
+      <div class="news-column2">
+        <div class="news-item2"><img src="https://media.thanthitv.com/h-upload/videothumb/yt_geqhgh-vThg.jpg" alt=""><div class="news-text2"><h4>"விஜய் + காங்., கூட்டணி" அண்ணாமலை</h4><span>DECEMBER 31, 2025</span></div></div>
+        <div class="news-item2"><img src="https://media.thanthitv.com/h-upload/videothumb/yt_KQNJKUjf-Z8.jpg" alt=""><div class="news-text2"><h4>"சேகர் பாபு நடந்து கொண்டது மிக மிக தவறு" கொதித்த தமிழிசை</h4><span>DECEMBER 31, 2025</span></div></div>
+        <div class="news-item2"><img src="https://media.thanthitv.com/h-upload/videothumb/yt_LmfcKtUeg3A.jpg" alt=""><div class="news-text2"><h4>வானதி சீனிவாசன் வாட்டர் ஏ.டி.எம். திட்டம்</h4><span>DECEMBER 30, 2025</span></div></div>
+        <div class="news-item2"><img src="https://media.thanthitv.com/h-upload/videothumb/yt_xK8qaKf5wak.jpg" alt=""><div class="news-text2"><h4>காங்கிரஸுக்கு அதிர்ச்சி கொடுத்த எம்பி ஜோதிமணி</h4><span>DECEMBER 28, 2025</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- BUG 9 FIX: removed <center> tag (deprecated) -->
+<div class="read-more-center"><button class="booking-btn2">மேலும் >></button></div>
+
+<hr class="section-hr">
+
+<!-- TAMILNADU -->
+<section class="news-section2">
+  <h1 class="section-title2">தமிழ்நாடு</h1>
+  <div class="news-layout2">
+    <div class="feature-news2">
+      <img src="https://media.thanthitv.com/h-upload/videothumb/yt_HbaChAQX5A8.jpg" alt="">
+      <h2>உலகையேபுரட்டிப்போட்ட நிகழ்வுகள்.. 2000-2025 கால்நூற்றாண்டின் கதை</h2>
+      <span class="date2">JANUARY 2, 2026</span>
+      <p>தமிழ்நாட்டில் மதியம் 1 மணி வரை 4 மாவட்டங்களில் மழை பெய்ய வாய்ப்புள்ளதாக வானிலை ஆய்வு மையம் தெரிவித்துள்ளது.</p>
+    </div>
+    <div class="right-news2">
+      <div class="news-column2">
+        <div class="news-item2"><img src="https://media.thanthitv.com/h-upload/videothumb/yt_5m1-2RYFnbA.jpg" alt=""><div class="news-text2"><h4>போராட்டத்தின் உச்சமாக வீட்டையே முற்றுகையிட முயன்ற தூய்மைப் பணியாளர்கள்</h4><span>DECEMBER 30, 2025</span></div></div>
+        <div class="news-item2"><img src="https://media.thanthitv.com/h-upload/videothumb/yt_PJT_-nIVWf4.jpg" alt=""><div class="news-text2"><h4>குடியிருப்பு பகுதியில் இளைஞர்களை துரத்திய கரடி - அதிர்ச்சி வீடியோ</h4><span>DECEMBER 31, 2025</span></div></div>
+        <div class="news-item2"><img src="https://media.thanthitv.com/h-upload/videothumb/yt_Y05n5qt_2ng.jpg" alt=""><div class="news-text2"><h4>குடும்பத்தோடு சிவனை பார்க்க வந்த முகேஷ் அம்பானி</h4><span>DECEMBER 31, 2025</span></div></div>
+        <div class="news-item2"><img src="https://media.thanthitv.com/h-upload/videothumb/yt_aIFob0OjWP8.jpg" alt=""><div class="news-text2"><h4>கோயிலில் உடைக்கப்பட்ட உண்டியல்.. நைசாக பணம் எடுத்த திருடன்</h4><span>DECEMBER 29, 2025</span></div></div>
+      </div>
+      <div class="news-column2">
+        <div class="news-item2"><img src="https://media.thanthitv.com/h-upload/2026/01/02/500x300_728600-bangla.jpg" alt=""><div class="news-text2"><h4>வங்கதேசத்தில் மேலும் ஒரு இந்து வியாபாரி குறிவைத்து தாக்கப்பட்டு</h4><span>DECEMBER 31, 2025</span></div></div>
+        <div class="news-item2"><img src="https://media.thanthitv.com/h-upload/videothumb/yt_i9mGwc6S49A.jpg" alt=""><div class="news-text2"><h4>முன்னாள் காதலிக்கு பிறந்தநாள் வாழ்த்து - முன்னாள் காதலன் கொலை</h4><span>DECEMBER 31, 2025</span></div></div>
+        <div class="news-item2"><img src="https://media.thanthitv.com/h-upload/videothumb/yt_LYjjL2eDfPk.jpg" alt=""><div class="news-text2"><h4>BJP | Death | Karnataka | துப்பாக்கிச்சூட்டில் காங்கிரஸ் தொண்டர் பலி</h4><span>DECEMBER 28, 2025</span></div></div>
+        <div class="news-item2"><img src="https://media.thanthitv.com/h-upload/videothumb/yt_9gmNBbHR-YE.jpg" alt=""><div class="news-text2"><h4>திருப்பதி லட்டு சர்ச்சை - சாதனை படைத்த திருப்பதி</h4><span>JANUARY 2, 2026</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="read-more-center"><button class="booking-btn2">மேலும் >></button></div>
+
+<hr class="section-hr">
+
+<!-- INDIA -->
+<section class="news-section2">
+  <h1 class="section-title2">இந்தியா</h1>
+  <div class="news-layout2">
+    <div class="feature-news2">
+      <img src="https://media.thanthitv.com/h-upload/videothumb/yt_9gmNBbHR-YE.jpg" alt="">
+      <h2>சர்ச்சைக்கு மத்தியில் சாதனை படைத்த திருப்பதி லட்டு - இவ்வளவு கோடியா!</h2>
+      <span class="date2">JANUARY 2, 2026</span>
+      <p>தமிழ்நாட்டில் மதியம் 1 மணி வரை 4 மாவட்டங்களில் மழை பெய்ய வாய்ப்புள்ளதாக வானிலை ஆய்வு மையம் தெரிவித்துள்ளது.</p>
+    </div>
+    <div class="right-news2">
+      <div class="news-column2">
+        <div class="news-item2"><img src="https://media.thanthitv.com/h-upload/videothumb/yt_HbaChAQX5A8.jpg" alt=""><div class="news-text2"><h4>உலகையேபுரட்டிப்போட்ட நிகழ்வுகள் 2000-2025</h4><span>JANUARY 2, 2026</span></div></div>
+        <div class="news-item2"><img src="https://media.thanthitv.com/h-upload/videothumb/yt_Y05n5qt_2ng.jpg" alt=""><div class="news-text2"><h4>குடும்பத்தோடு சிவனை பார்க்க வந்த முகேஷ் அம்பானி</h4><span>DECEMBER 31, 2025</span></div></div>
+        <div class="news-item2"><img src="https://media.thanthitv.com/h-upload/videothumb/yt_PJT_-nIVWf4.jpg" alt=""><div class="news-text2"><h4>குடியிருப்பு பகுதியில் இளைஞர்களை துரத்திய கரடி</h4><span>DECEMBER 31, 2025</span></div></div>
+        <div class="news-item2"><img src="https://media.thanthitv.com/h-upload/videothumb/yt_aIFob0OjWP8.jpg" alt=""><div class="news-text2"><h4>கோயிலில் உடைக்கப்பட்ட உண்டியல் திருடன்</h4><span>DECEMBER 29, 2025</span></div></div>
+      </div>
+      <div class="news-column2">
+        <div class="news-item2"><img src="https://media.thanthitv.com/h-upload/2026/01/02/500x300_728600-bangla.jpg" alt=""><div class="news-text2"><h4>வங்கதேசத்தில் இந்து வியாபாரி தாக்கப்பட்டனர்</h4><span>DECEMBER 31, 2025</span></div></div>
+        <div class="news-item2"><img src="https://media.thanthitv.com/h-upload/videothumb/yt_i9mGwc6S49A.jpg" alt=""><div class="news-text2"><h4>Karnataka | Murder | காதலன் கொலை</h4><span>DECEMBER 31, 2025</span></div></div>
+        <div class="news-item2"><img src="https://media.thanthitv.com/h-upload/videothumb/yt_5m1-2RYFnbA.jpg" alt=""><div class="news-text2"><h4>வீட்டையே முற்றுகையிட முயன்ற தூய்மைப் பணியாளர்கள்</h4><span>DECEMBER 30, 2025</span></div></div>
+        <div class="news-item2"><img src="https://media.thanthitv.com/h-upload/videothumb/yt_LYjjL2eDfPk.jpg" alt=""><div class="news-text2"><h4>BJP MLA மீது வழக்கு.. Karnataka</h4><span>DECEMBER 28, 2025</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="read-more-center"><button class="booking-btn2">மேலும் >></button></div>
+
+<hr class="section-hr">
+
+<!-- CINEMA -->
+<section class="news-section2">
+  <h1 class="section-title2">சினிமா</h1>
+  <div class="news-layout2">
+    <div class="feature-news2">
+      <img src="https://media.thanthitv.com/h-upload/videothumb/yt_7x9ykNsKt6s.jpg" alt="">
+      <h2>அண்ணாமலையார் கோயிலில் இளையராஜா.. தரையில் விழுந்து வழிபாடு</h2>
+      <span class="date2">JANUARY 2, 2026</span>
+      <p>தமிழ்நாட்டில் மதியம் 1 மணி வரை 4 மாவட்டங்களில் மழை பெய்ய வாய்ப்புள்ளதாக வானிலை ஆய்வு மையம் தெரிவித்துள்ளது.</p>
+    </div>
+    <div class="right-news2">
+      <div class="news-column2">
+        <div class="news-item2"><img src="https://media.thanthitv.com/h-upload/2026/01/01/500x300_728556-untitled8.webp" alt=""><div class="news-text2"><h4>2025ல் ஹிட் அடித்த இந்திய திரைப்படங்கள்</h4><span>JANUARY 2, 2026</span></div></div>
+        <div class="news-item2"><img src="https://media.thanthitv.com/h-upload/2026/01/03/500x300_728625-rybebrytrb.jpg" alt=""><div class="news-text2"><h4>விஜயின் ஜனநாயகன் டிரெய்லர் வெளியாகியுள்ளது</h4><span>DECEMBER 31, 2025</span></div></div>
+        <div class="news-item2"><img src="https://media.thanthitv.com/h-upload/videothumb/yt_x3nRWCkyeN0.jpg" alt=""><div class="news-text2"><h4>Stranger Things Season 5 | பாக்ஸ் ஆஃபீசை புரட்டிப்போட்டது</h4><span>DECEMBER 31, 2025</span></div></div>
+        <div class="news-item2"><img src="https://media.thanthitv.com/h-upload/videothumb/yt_6O_QbgD1p00.jpg" alt=""><div class="news-text2"><h4>Rajinikanth 173 | தலைவர் 173 அதிகாரப்பூர்வ அறிவிப்பு</h4><span>DECEMBER 29, 2025</span></div></div>
+      </div>
+      <div class="news-column2">
+        <div class="news-item2"><img src="https://media.thanthitv.com/h-upload/2026/01/03/500x300_728622-26.jpg" alt=""><div class="news-text2"><h4>ஓடிடியில் வெளியான "சல்லியர்கள்"</h4><span>DECEMBER 31, 2025</span></div></div>
+        <div class="news-item2"><img src="https://media.thanthitv.com/h-upload/2026/01/03/500x300_728616-23.jpg" alt=""><div class="news-text2"><h4>தலைவர் 173 இயக்குனர் சிபி சக்கரவர்த்தி?</h4><span>DECEMBER 31, 2025</span></div></div>
+        <div class="news-item2"><img src="https://media.thanthitv.com/h-upload/2026/01/02/500x300_728606-4hsing.jpg" alt=""><div class="news-text2"><h4>ஜனநாயகன் ராவண மவன்டா பாடல் வெளியானது</h4><span>DECEMBER 30, 2025</span></div></div>
+        <div class="news-item2"><img src="https://media.thanthitv.com/h-upload/videothumb/yt_lPMiCn_ktQg.jpg" alt=""><div class="news-text2"><h4>Jananayagan | டிக்கெட் முன்பதிவு தொடங்கும் தேதி அறிவிப்பு</h4><span>DECEMBER 28, 2025</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="read-more-center"><button class="booking-btn2">மேலும் >></button></div>
+
+<hr class="section-hr">
+
+<!-- WORLD -->
+<section class="news-section2">
+  <h1 class="section-title2">உலகம்</h1>
+  <div class="news-layout2">
+    <div class="feature-news2">
+      <img src="https://media.thanthitv.com/h-upload/videothumb/yt_iRs6Z8HhJJ0.jpg" alt="">
+      <h2>Switzerland | சோகத்தில் முடிந்த புத்தாண்டு கொண்டாட்டம் - பாரில் பயங்கர தீ விபத்து!</h2>
+      <span class="date2">JANUARY 2, 2026</span>
+      <p>தமிழ்நாட்டில் மதியம் 1 மணி வரை 4 மாவட்டங்களில் மழை பெய்ய வாய்ப்புள்ளதாக வானிலை ஆய்வு மையம் தெரிவித்துள்ளது.</p>
+    </div>
+    <div class="right-news2">
+      <div class="news-column2">
+        <div class="news-item2"><img src="https://media.thanthitv.com/h-upload/videothumb/yt_-Sv_F6iCivQ.jpg" alt=""><div class="news-text2"><h4>ராட்சச இயந்திரத்தை உருவாக்கிய சீனா - பூமியை விட 100 மடங்கு பவர்புல்</h4><span>JANUARY 2, 2026</span></div></div>
+        <div class="news-item2"><img src="https://media.thanthitv.com/h-upload/videothumb/yt_SnPtcUidttA.jpg" alt=""><div class="news-text2"><h4>கட்டும்போதே திடீரென எரிந்த பில்டிங் - பதறவைக்கும் காட்சி</h4><span>DECEMBER 31, 2025</span></div></div>
+        <div class="news-item2"><img src="https://media.thanthitv.com/h-upload/videothumb/yt_BKvFZG51RD0.jpg" alt=""><div class="news-text2"><h4>Nepal | 'புத்தா ஏர்' ஜஸ்ட் மிஸ்ஸில் உயிர் தப்பிய பயணிகள்</h4><span>DECEMBER 31, 2025</span></div></div>
+        <div class="news-item2"><img src="https://media.thanthitv.com/h-upload/videothumb/yt_KUyhJOAtzak.jpg" alt=""><div class="news-text2"><h4>US vs Venezuela | திடீர் வெடிப்பு - அமெரிக்கா தாக்குதல்?</h4><span>DECEMBER 29, 2025</span></div></div>
+      </div>
+      <div class="news-column2">
+        <div class="news-item2"><img src="https://media.thanthitv.com/h-upload/videothumb/yt_T4JaaU8V8iM.jpg" alt=""><div class="news-text2"><h4>Trump | US | துப்பாக்கிச் சூட்டில் 14,600 பேர் கொடூர சாவு</h4><span>DECEMBER 31, 2025</span></div></div>
+        <div class="news-item2"><img src="https://media.thanthitv.com/h-upload/videothumb/yt_QvAVEGzJ2QQ.jpg" alt=""><div class="news-text2"><h4>அசுர வேகத்தில் தென்னை மரத்தில் மோதி தலைகீழாக நின்ற கார்</h4><span>DECEMBER 31, 2025</span></div></div>
+        <div class="news-item2"><img src="https://media.thanthitv.com/h-upload/videothumb/yt_ISE6VM-tqHM.jpg" alt=""><div class="news-text2"><h4>Earthquake | GYM | பூகம்பத்தில் கிடுகிடுவென ஆடிய ஜிம்</h4><span>DECEMBER 30, 2025</span></div></div>
+        <div class="news-item2"><img src="https://media.thanthitv.com/h-upload/videothumb/yt_LYjjL2eDfPk.jpg" alt=""><div class="news-text2"><h4>BJP | Death | Karnataka | துப்பாக்கிச்சூட்டில் தொண்டர் பலி</h4><span>DECEMBER 28, 2025</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="read-more-center"><button class="booking-btn2">மேலும் >></button></div>
+
+<!-- ══════════════════════════
+  FOOTER
+  BUG 10 FIX: removed fixed height:900px, fixed background-size:contain
+              replaced local logo with real URL
+══════════════════════════ -->
+<footer class="thanthi-footer">
+
+  <h3 class="footer-title">Thanthi TV across DTH Service Providers</h3>
+
+  <div class="dth-row">
+    <div class="logo-item"><img src="https://media.thanthitv.com/h-upload/2023/12/12/674700-airtel.webp" alt="Airtel"></div>
+    <div class="logo-item"><img src="https://media.thanthitv.com/h-upload/2023/12/12/674701-d2h.webp" alt="D2H"></div>
+    <div class="logo-item"><img src="https://media.thanthitv.com/h-upload/2023/12/29/677302-sundirect.webp" alt="Sun Direct"></div>
+    <div class="logo-item"><img src="images/jak.webp" alt="JAK"></div>
+    <div class="logo-item"><img src="https://media.thanthitv.com/h-upload/2023/12/12/674702-dishtv.webp" alt="Dish TV"></div>
+  </div>
+
+  <h3 class="footer-title">Thanthi TV across Cable Operators In Tamil Nadu</h3>
+
+  <div class="logo-grid">
+    <div class="logo-item"><img src="images/apple digital.webp" alt="Arasu"></div>
+    <div class="logo-item"><img src="images/download.jpg" alt="Akshaya"></div>
+    <div class="logo-item"><img src="images/aadhar.jpeg" alt="Aadhar"></div>
+    <div class="logo-item"><img src="images/scv.jpeg" alt="SCV"></div>
+    <div class="logo-item"><img src="images/tccl.png" alt="TCCL"></div>
+    <div class="logo-item"><img src="images/AMN.jpeg" alt="AMN"></div>
+    <div class="logo-item"><img src="images/jaisd.jpeg" alt="JaiSD"></div>
+    <div class="logo-item"><img src="images/aristo.jpeg" alt="Guild"></div>
+    <div class="logo-item"><img src="https://media.thanthitv.com/h-upload/2022/08/27/624175-usilainew.webp" alt="Usilai"></div>
+    <div class="logo-item"><img src="images/ctn.jpeg" alt="CTN"></div>
+    <div class="logo-item"><img src="images/gtp.jpeg" alt="GTPL"></div>
+    <div class="logo-item"><img src="https://media.thanthitv.com/h-upload/2022/08/27/624174-vkdigitalnew.webp" alt="VK Digital"></div>
+  </div>
+
+  <div class="region-row">
+    <div><h4>In UAE</h4><img src="images/uae dth.jpg" alt="E-Vision"></div>
+    <div><h4>In Puducherry</h4><img src="images/puduchery dth.jpg" alt="MV Logo"></div>
+  </div>
+
+  <hr class="footer-hr">
+
+  <div class="footer-links">
+    <a href="#">எங்களைப்பற்றி</a> |
+    <a href="#">தனியுரிமை பாதுகாப்பு</a> |
+    <a href="#">தொடர்புகொள்ள</a> |
+    <a href="#">ஆலோசனைகள்</a> |
+    <a href="#">Archive Sitemap</a>
+  </div>
+
+  <div class="footer-logo">
+    <img src="images/thanthitv logo.jpeg" alt="Thanthi TV Logo">
+  </div>
+
+  <p class="copyright">Copyright &copy; 2025 Thanthi TV, All Rights Reserved.</p>
+  <p class="copyright">Powered by Hocalwire</p>
+
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
